@@ -11,8 +11,8 @@ public class ChiTietPhieu {
         setGia(Gia);
     }
 
-    public void inChiTietPhieu(String maHD) {
-        System.out.printf("|%-16s|%-16s|%-16s|%-16s|%n", maHD, IDSach, soLuong, Gia);
+    public void inChiTietPhieu() {
+        System.out.printf("|%-16s|%-16s|%-16s|%-16s|%n", IDSach, soLuong, Gia);
     }
 
     public String getIDSach() {

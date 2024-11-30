@@ -103,7 +103,6 @@ public abstract class Sach {
     public void setSoLuong(int soLuong) {
         this.soLuong = soLuong;
     } 
-    
     public void Nhap(String maSach, String maTacGia, String maNXB) {
         this.maSach = maSach;
         this.tenSach = Check.takeStringInput("Nhap ten sach: ");

@@ -1,5 +1,14 @@
 package QuanLyCuaHangBanSach;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -197,7 +206,7 @@ public class Check {
             System.out.print(nhapGi);
             try{
                 String input = sc.nextLine();
-                int check = Integer.parseInt(input);
+                // int check = Integer.parseInt(input);
                 if(input.isEmpty())
                     Check.printError("Ban chua co nhap gi het !");
                 else if(input.length() > 14)
@@ -303,4 +312,32 @@ public class Check {
         return TEXT_YELLOW + text + TEXT_RESET;
     }
 
+
+       //Load file tham số obj là obj là cần load. Trả về null nếu lỗi và obj nếu đúng
+       public static Object load(Object obj, String filename)
+       {
+           try
+           {
+               ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename));
+               obj = ois.readObject();
+           } catch (IOException | ClassNotFoundException | NullPointerException | NoClassDefFoundError IOE){
+               printError("Load " + filename +  " thất bại => tạo dữ liệu mặc định");
+               return null;
+           }
+           printMessage("Load " + filename +  " thành công");
+           return obj;
+       }
+   
+       //Save file tham số obj là obj cần save
+       public static void save(Object obj, String filename)
+       {
+           try{
+               ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename));
+               oos.writeObject(obj);
+               Check.printMessage("Save "  + filename + " thành công");
+           } catch (IOException e) {
+               e.printStackTrace();
+               Check.printError("Save " + filename +  " thất bại");
+           }
+       }
 }

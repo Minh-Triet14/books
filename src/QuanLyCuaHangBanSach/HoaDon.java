@@ -81,15 +81,21 @@ public class HoaDon {
         return maHD;
     }
 
-    public void setMahd(String maHD) {
+    public void setMaHD(String maHD) {
         this.maHD = maHD;
-    }
-
-    public String getTinhTrang() {
-        return tinhTrang;
     }
 
     public void setTinhTrang(String tinhTrang) {
         this.tinhTrang = tinhTrang;
     }
+    public String getTinhTrang() {
+        return tinhTrang;
+    }
+
+    public DanhSachChiTietHoaDon getListChiTietHoaDon() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getListChiTietHoaDon'");
+    }
+
+   
 }

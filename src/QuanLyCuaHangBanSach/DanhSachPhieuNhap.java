@@ -144,16 +144,16 @@ public class DanhSachPhieuNhap implements DanhSach{
         boolean finish = false;
         do {
             DanhSachSach.xuatDS();
-            System.out.println("1. Nhập điện thoại");
-            System.out.println("2. Xác nhận nhập hàng");
+            System.out.println("1. Nhap dien thoai");
+            System.out.println("2. Xac nhan da nhan hang");
             switch (Check.takeInputChoice(1, 2))
             {
                 case 1 -> {
-                    String iddt = Check.takeStringInput("Nhập mã điện thoại: ");
+                    String iddt = Check.takeStringInput("Nhap ma sach: ");
                     int index = DanhSachSach.TimKiemMaSach(iddt);
                     if(index != -1)
                     {
-                        int sl = Check.takeIntegerInput("Nhập số lượng: ");
+                        int sl = Check.takeIntegerInput("Nhap so luong: ");
                         ChiTietPhieu chiTietPhieu = DanhSachChiTietPhieu.search(iddt);
                         if(chiTietPhieu != null)
                             chiTietPhieu.setSoLuong(chiTietPhieu.getSoLuong() + sl);
@@ -161,12 +161,12 @@ public class DanhSachPhieuNhap implements DanhSach{
                             DanhSachChiTietPhieu.add(new ChiTietPhieu(iddt, sl, DanhSachSach.getListSach()[index].getGiaThanh()));
                     }
                     else
-                        Check.printError("Không có điện thoại này");
+                        Check.printError("Khong co sach nay");
                 }
                 case 2 -> finish = true;
             }
             if(!finish)
-                Check.clearScreen();
+                Check.ClearConsole();
         }while (!finish);
 
         dsPhieuNhap.add(new PhieuNhap(idPhieu, Check.getDateNow(), idNXB, nguoi.getId(), DanhSachChiTietPhieu, DanhSachChiTietPhieu.tinhTongTien()));
@@ -201,7 +201,7 @@ public class DanhSachPhieuNhap implements DanhSach{
             }
             if (thoatXemDSPhieu)
                 break;
-            Check.clearScreen();
+            Check.ClearConsole();
         }
     }
 

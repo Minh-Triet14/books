@@ -241,8 +241,28 @@ public class DanhSachSach implements DanhSach {
         }
     }
 
-  public static void main(String[] args) {
-      DanhSachSach sach = new DanhSachSach();
-      sach.MenuSach(null, null);
-  }
+
+//   public void MenuSach(DanhSachTacGia dstg, DanhSachNhaXuatBan dsnxb,String maSach)
+// 	{
+// 		while(true) {
+// 			xuatDS();
+// 			System.out.println("1. Thêm điện thoại");
+// 			System.out.println("2. Tìm kiếm trong bảng");
+// 			System.out.println("3. Xóa Điện Thoại");
+// 			System.out.println("4. Sửa");
+// 			System.out.println("0. Thoát");
+// 			boolean out = false;
+// 			switch (Check.takeInputChoice(0, 4)) {
+// 				case 1 -> ThemSach(dstg, dsnxb);
+// 				case 2 -> TimKiemMaSach(maSach);
+// 				case 3 -> XoaSach();
+// 				case 4 -> MenuSuaSach(dstg, dsnxb);
+// 				case 0 -> out = true;
+// 			}
+// 			if(out)
+// 				break;
+// 			Check.ClearConsole();
+// 		}
+// 	}
+      
 }

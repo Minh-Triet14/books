@@ -74,9 +74,9 @@ public class DanhSachSach implements DanhSach {
         String maNhaXuatBan = Check.NhapMaNhaXuatBan(dsnxb);
         listSach = Arrays.copyOf(listSach, getSoLuong() + 1);
         switch(dstg.TimKiemTheoIDTacGia(maTacGia).getTenTacGia()) {
-            case "Sach Giao Khoa" -> listSach[getSoLuong() - 1] = new SachGiaoKhoa();
-            case "Sach Kham Khao" -> listSach[getSoLuong() - 1] = new SachKhamKhao();
-            case "Sach Ki Nang Song" -> listSach[getSoLuong() - 1] = new SachKiNangSong();
+            case "SachGiaoKhoa" -> listSach[getSoLuong() - 1] = new SachGiaoKhoa();
+            case "SachKhamKhao" -> listSach[getSoLuong() - 1] = new SachKhamKhao();
+            case "SachKiNangSong" -> listSach[getSoLuong() - 1] = new SachKiNangSong();
             case "Truyen" -> listSach[getSoLuong() - 1] = new Truyen();
         }
         listSach[getSoLuong() - 1].Nhap(maSach, maTacGia, maNhaXuatBan);

@@ -227,14 +227,22 @@ public class DanhSachHoaDon implements DanhSach {
             Check.printError("Khong co hoa don nao !");
     }
 
-    private void xemChiTietHoaDon(Nguoi nguoi)
-    {
-        String id = Check.takeStringInput("Nhap ma hoa don can xem: ");
-        HoaDon hoaDon = timKiemHoaDonTheoID(id, nguoi);
-        if (hoaDon == null)
-            Check.printError("Khong co hoa don nay !");
-        else
-            xuatChiTietHoaDon(hoaDon);
+    // private void xemChiTietHoaDon(Nguoi nguoi)
+    // {
+    //     String id = Check.takeStringInput("Nhap ma hoa don can xem: ");
+    //     HoaDon hoaDon = timKiemHoaDonTheoID(id, nguoi);
+    //     if (hoaDon == null)
+    //         Check.printError("Khong co hoa don nay !");
+    //     else
+    //         xuatChiTietHoaDon(hoaDon);
+    // }
+
+    public ArrayList<HoaDon> getlistHoaDon() {
+        return listHoaDon;
+    }
+
+    public void setlistHoaDon(ArrayList<HoaDon> listHoaDon) {
+        this.listHoaDon = listHoaDon;
     }
 
 }

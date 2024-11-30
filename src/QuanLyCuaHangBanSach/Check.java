@@ -302,5 +302,12 @@ public class Check {
     {
         return TEXT_YELLOW + text + TEXT_RESET;
     }
+    public static void clearScreen()
+    {
+        Check.printMessage("Nhập bất kỳ để tiếp tục");
+        Scanner cn = new Scanner(System.in);
+        cn.nextLine();
+        System.out.printf("%5s", repeatStr("\n", 5));
+    }
 
 }
